@@ -25,19 +25,12 @@ td {background-color: lightblue;}
 <tbody> 
 <?php
 include "conf/connect.php";
-//mysql_select_db('myadsb',$db);
-//$date = date('Y-m-d H:i:s');
-$date = date('Ymd');
-echo 'date-->'.$date;
 $d=$_GET['d'];
-//echo 'd-->'.$d;
+if (empty($d)) {$d=date('Ymd');}
 $sql = "select * from piawarelog where d='".$d."' order by t";
-//echo $sql;
-//$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 $stmt = $db->query($sql);    
 $k=0;
 $nbt=0;
-//while($data = mysql_fetch_assoc($req))
 while($data = $stmt->fetch())
     {
 	$k+=1;
@@ -46,7 +39,6 @@ while($data = $stmt->fetch())
 	$myurl=urlencode($data['timestamp1']);
 	echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$data['d'].'</td><td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
     }
-//mysql_close($db);
 $stmt->closeCursor();
 echo'<tbody>';
 echo '<TFOOT>';
