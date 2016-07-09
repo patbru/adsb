@@ -1,4 +1,11 @@
 <?php
-$db = mysql_connect("localhost", "adsb1", "adsb1")
-    or die("Impossible de se connecter : " . mysql_error());
+try
+{
+	$db = new PDO('mysql:host=localhost;dbname=myadsb;charset=utf8', 'adsb1', 'adsb1');
+}
+catch (Exception $e)
+{
+    die('Error : ' . $e->getMessage());
+}
+
 ?>
