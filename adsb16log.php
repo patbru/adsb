@@ -25,15 +25,13 @@ td {background-color: lightblue;}
 <tbody> 
 <?php
 include "conf/connect.php";
-mysql_select_db('myadsb',$db);
-
+//mysql_select_db('myadsb',$db);
 $d=$_GET['d'];
 //echo 'd-->'.$d;
 $sql = "select * from piawarelog where d='".$d."' order by t";
 //echo $sql;
 //$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 $stmt = $db->query($sql);    
-  
 $k=0;
 $nbt=0;
 //while($data = mysql_fetch_assoc($req))
