@@ -1786,7 +1786,7 @@ $api = new PHP_CRUD_API(array(
 	'database'=>'myadsb',
  	'charset'=>'utf8'
  ));
-// $api->executeCommand();
+$api->executeCommand();
 // For Microsoft SQL Server 2012 use:
 // $api = new PHP_CRUD_API(array(
 // 	'dbengine'=>'SQLServer',
