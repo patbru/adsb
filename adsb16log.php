@@ -26,14 +26,18 @@ td {background-color: lightblue;}
 <?php
 include "conf/connect.php";
 mysql_select_db('myadsb',$db);
+
 $d=$_GET['d'];
 //echo 'd-->'.$d;
 $sql = "select * from piawarelog where d='".$d."' order by t";
 //echo $sql;
-$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+//$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+$stmt = $db->query($sql);    
+  
 $k=0;
 $nbt=0;
-while($data = mysql_fetch_assoc($req))
+//while($data = mysql_fetch_assoc($req))
+while($data = $stmt->fetch())
     {
 	$k+=1;
 	$nb=$data['nb'];
@@ -41,7 +45,8 @@ while($data = mysql_fetch_assoc($req))
 	$myurl=urlencode($data['timestamp1']);
 	echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$data['d'].'</td><td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
     }
-mysql_close($db);
+//mysql_close($db);
+$stmt->closeCursor();
 echo'<tbody>';
 echo '<TFOOT>';
 echo '<TR><TH ALIGN=CENTER COLSPAN=5>'.''.'</TH></TR>';
