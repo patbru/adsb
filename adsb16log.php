@@ -26,6 +26,8 @@ td {background-color: lightblue;}
 <?php
 include "conf/connect.php";
 //mysql_select_db('myadsb',$db);
+$date = date('Y-m-d H:i:s');
+echo 'date-->'.$date;
 $d=$_GET['d'];
 //echo 'd-->'.$d;
 $sql = "select * from piawarelog where d='".$d."' order by t";
