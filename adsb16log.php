@@ -47,7 +47,7 @@ echo '<td bgcolor=lightgrey>'.$data['nbac'].'</td><td bgcolor=lightgrey><b>'.$nb
 $stmt->closeCursor();
 echo'<tbody>';
 echo '<TFOOT>';
-echo '<TR><TH ALIGN=CENTER COLSPAN=5>'.''.'</TH></TR>';
+echo '<TR><TH ALIGN=CENTER COLSPAN=8>'.''.'</TH></TR>';
 ?>
 </TFOOT>
 </table>
