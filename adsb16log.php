@@ -20,6 +20,9 @@ td {background-color: lightblue;}
     <th>t</th> 
     <th>nb</th> 
     <th>nbt</th> 
+    <th>nbac</th> 
+    <th>nbmlat</th> 
+    <th>dmac</th>     
 </tr> 
 </thead> 
 <tbody> 
@@ -37,7 +40,9 @@ while($data = $stmt->fetch())
 	$nb=$data['nb'];
 	$nbt+=$nb;
 	$myurl=urlencode($data['timestamp1']);
-	echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$data['d'].'</td><td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
+echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$data['d'].'</td>';
+echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
+echo '<td bgcolor=lightgrey>'.$data['nbac'].'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td></tr>';
     }
 $stmt->closeCursor();
 echo'<tbody>';
