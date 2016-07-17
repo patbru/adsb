@@ -11,25 +11,25 @@ td {background-color: lightblue;}
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script> 
 </head>
 <body>
-<table align="center" id="myTable" class="tablesorter" > 
-<CAPTION><a style="text-decoration : none;" href="http://78.225.229.46:8096/mydump1090.html">ADSB16</a></CAPTION>
-<thead> 
-<tr> 
-    <th>sq</th> 
-    <th>d</th> 
-    <th>t</th> 
-    <th>nb</th> 
-    <th>nbt</th> 
-    <th>nbac</th> 
-    <th>nbmlat</th> 
-    <th>dmac</th>     
-</tr> 
-</thead> 
-<tbody> 
 <?php
 include "conf/connect.php";
 $d=$_GET['d'];
 if (empty($d)) {$d=date('Ymd');}
+echo '<table align="center" id="myTable" class="tablesorter" >'; 
+echo '<CAPTION><a style="text-decoration : none;" href="http://78.225.229.46:8096/mydump1090.html">ADSB16 - '.$d.'</a></CAPTION>';
+echo '<thead>'; 
+echo '<tr>'; 
+echo '    <th>sq</th>'; 
+//echo '    <th>d</th>'; 
+echo '    <th>t</th>'; 
+echo '    <th>nb</th>'; 
+echo '    <th>nbt</th>'; 
+echo '    <th>nbac</th>'; 
+echo '    <th>nbmlat</th>'; 
+echo '    <th>dmac</th>';     
+echo '</tr>'; 
+echo '</thead>'; 
+echo '<tbody>';
 $sql = "select * from piawarelog where d='".$d."' order by t";
 $stmt = $db->query($sql);    
 $k=0;
@@ -45,7 +45,8 @@ while($data = $stmt->fetch())
 	$dmax=$data['dmax'];
 	$myurl=urlencode($data['timestamp1']);
 echo '<tr>';
-echo '<td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
+//echo '<td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
+echo '<td bgcolor=lightgrey>'.$k.'</td>';
 echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
 echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
 echo '</tr>';
