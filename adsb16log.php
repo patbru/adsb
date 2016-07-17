@@ -44,9 +44,11 @@ while($data = $stmt->fetch())
 	$nbmlat=$data['nbmlat'];
 	$dmax=$data['dmax'];
 	$myurl=urlencode($data['timestamp1']);
-echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
-echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
-echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td></tr>';
+echo '<tr>';
+echo '<td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
+echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
+echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
+echo '</tr>';
     }
 $stmt->closeCursor();
 echo'<tbody>';
