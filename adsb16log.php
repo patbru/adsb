@@ -44,9 +44,9 @@ while($data = $stmt->fetch())
 	$dmax=$data['dmax'];
 	$myurl=urlencode($data['timestamp1']);
 echo '<tr>';
-echo '<td bgcolor=lightgrey>'.$k.'</td>';
-echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
-echo '<td style="font-weight: bold;">'.$nbac.'</td><td style="font-weight: normal;"><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
+echo '<td>'.$k.'</td>';
+echo '<td>'.$data['t'].'</td><td><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
+echo '<td style="font-weight: bold;">'.$nbac.'</td><td>'.$nbmlat.'</td><td>'.$dmax.'</td>';
 echo '</tr>';
     }
 $stmt->closeCursor();
