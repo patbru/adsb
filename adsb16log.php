@@ -37,12 +37,16 @@ $nbt=0;
 while($data = $stmt->fetch())
     {
 	$k+=1;
+	$d=$data['d'];
 	$nb=$data['nb'];
 	$nbt+=$nb;
+	$nbac=$data['nbac'];
+	$nbmlat=$data['nbmlat'];
+	$dmax=$data['dmax'];
 	$myurl=urlencode($data['timestamp1']);
-echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$data['d'].'</td>';
+echo '<tr><td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
 echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td></tr>';
-echo '<td bgcolor=lightgrey>'.$data['nbac'].'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td></tr>';
+echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td></tr>';
     }
 $stmt->closeCursor();
 echo'<tbody>';
