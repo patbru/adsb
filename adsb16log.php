@@ -46,7 +46,7 @@ while($data = $stmt->fetch())
 echo '<tr>';
 echo '<td bgcolor=lightgrey>'.$k.'</td>';
 echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
-echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
+echo '<td style="font-weight: bold;">'.$nbac.'</td><td style="font-weight: normal;"><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
 echo '</tr>';
     }
 $stmt->closeCursor();
