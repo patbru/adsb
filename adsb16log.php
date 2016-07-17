@@ -20,13 +20,12 @@ echo '<CAPTION><a style="text-decoration : none;" href="http://78.225.229.46:809
 echo '<thead>'; 
 echo '<tr>'; 
 echo '    <th>sq</th>'; 
-//echo '    <th>d</th>'; 
 echo '    <th>t</th>'; 
 echo '    <th>nb</th>'; 
 echo '    <th>nbt</th>'; 
 echo '    <th>nbac</th>'; 
-echo '    <th>nbmlat</th>'; 
-echo '    <th>dmac</th>';     
+echo '    <th>mlat</th>'; 
+echo '    <th>dmax</th>';     
 echo '</tr>'; 
 echo '</thead>'; 
 echo '<tbody>';
@@ -45,7 +44,6 @@ while($data = $stmt->fetch())
 	$dmax=$data['dmax'];
 	$myurl=urlencode($data['timestamp1']);
 echo '<tr>';
-//echo '<td bgcolor=lightgrey>'.$k.'</td><td bgcolor=lightgrey>'.$d.'</td>';
 echo '<td bgcolor=lightgrey>'.$k.'</td>';
 echo '<td bgcolor=lightgrey>'.$data['t'].'</td><td bgcolor=lightgrey><b>'.$nb.'</b></td><td bgcolor=lightgrey>'.$nbt.'</td>';
 echo '<td bgcolor=lightgrey>'.$nbac.'</td><td bgcolor=lightgrey><b>'.$nbmlat.'</b></td><td bgcolor=lightgrey>'.$dmax.'</td>';
@@ -63,7 +61,7 @@ $(document).ready(function()
     {
         //$("#myTable").tablesorter();
      	$("#myTable").tablesorter({
-     		sortList: [[2,1]]
+     		sortList: [[1,1]]
  		});
     }
 );
