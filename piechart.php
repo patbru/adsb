@@ -1,18 +1,5 @@
 <?php
 
-/* 
-A small PHP program and function that draws a pie chart in SVG format. 
-
-Written by Branko Collin in 2008.
-
-This code is hereby released into the public domain. In case this is not legally possible: I, Branko Collin, hereby grant anyone the right to use this work for any purpose, without any conditions, unless such conditions are required by law.*/ 
-
-/* Working with relative values confused me, so I worked with absolute ones 
-instead. Generally this should not be a problem, as the only relative values you 
-need are the chart's centre coordinates and its radius, and these are a linear
-function of the bounding box size or canvas size. See the sample values for how 
-this could work out. */
-
 /* Sample values */
 $values[] = 27;
 $values[] = 177;
